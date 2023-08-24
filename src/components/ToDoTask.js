@@ -1,7 +1,7 @@
 export default function ToDoTask({ id, content }) {
   return (
     <div>
-      <li key={id}>todo{content}</li>
+      <li key={id}>{content}</li>
     </div>
   );
 }
