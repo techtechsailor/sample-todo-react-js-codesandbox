@@ -1,7 +1,7 @@
-export default function ToDoTask({ count }) {
+export default function ToDoTask({ id, content }) {
   return (
-    <>
-      <li key={count}>todo{count}</li>
-    </>
+    <div>
+      <li key={id}>todo{content}</li>
+    </div>
   );
 }
