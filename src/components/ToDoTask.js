@@ -1,11 +1,11 @@
 import Button from "./Button.js";
 
-export default function ToDoTask({ id, content }) {
+export default function ToDoTask({ id, content, onDelete }) {
   return (
     <div>
       <li key={id}>
         {content}
-        <Button onClick={() => alert("delete")}>delete</Button>
+        <Button onClick={onDelete}>delete</Button>
       </li>
     </div>
   );

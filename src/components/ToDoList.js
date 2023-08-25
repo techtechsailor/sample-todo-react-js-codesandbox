@@ -35,8 +35,11 @@ export default function ToDoList() {
           {todoList.map((todo, index) => {
             return (
               <>
-                <ToDoTask id={index} content={todo} />
-                <Button onClick={() => deleteTask(index)}>delete</Button>
+                <ToDoTask
+                  id={index}
+                  content={todo}
+                  onDelete={() => deleteTask(index)}
+                />
               </>
             );
           })}
