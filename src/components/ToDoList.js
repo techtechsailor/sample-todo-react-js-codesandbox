@@ -8,11 +8,16 @@ export default function ToDoList() {
 
   //タスクをタスクリストに追加する
   function addTask() {
-    if (task === "") {
-      return;
-    }
+    if (task === "") return; //空白の場合はタスクを追加しない
     setTodoList([...todoList, task]); //リストにタスクを追加
     setTask(""); //タスク追加後に入力欄をリセット
+  }
+
+  //該当IDのタスクをTodoListから削除する
+  function deleteTask(id) {
+    console.log(todoList);
+    console.log(todoList.filter((todo, index) => index !== id));
+    setTodoList(todoList.filter((todo, index) => index !== id));
   }
 
   return (
@@ -28,7 +33,12 @@ export default function ToDoList() {
       <div>
         <ul>
           {todoList.map((todo, index) => {
-            return <ToDoTask id={index} content={todo} />;
+            return (
+              <>
+                <ToDoTask id={index} content={todo} />
+                <Button onClick={() => deleteTask(index)}>delete</Button>
+              </>
+            );
           })}
         </ul>
       </div>
